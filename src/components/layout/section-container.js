@@ -6,67 +6,156 @@ import glowImg from "../../app/assets/me-glow.png";
 class SectionContainer extends LitElement {
   
   static styles = css`
-    img {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 220px;
+    font-family: 'Preahvihear', sans-serif;
+    color: white;
+  }
+
+  .top-row {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    margin-bottom: 24px;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .glow {
+    width: 320px;
+    height: 320px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .avatar {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .top-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 620px;
+  }
+
+  .highlight-name {
+    color: #7127BA;
+  }
+
+  .software-engineer {
+    font-size: 50px;
+  }
+
+  .judes {
+    font-size: 50px;
+    line-height: 1.1;
+  }
+
+  .work-experience {
+    font-size: 50px;
+  }
+
+  .intro-name {
+    margin-bottom: 12px;
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 16px;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 1024px) {
+    section {
+      padding: 40px 24px;
     }
 
-    section {
-      display: flex;
-      flex-direction: column;
-      padding: 60px 220px;
-      font-family: 'Preahvihear', sans-serif;
-    }
     .top-row {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      margin-bottom: 16px;
-    }
-    .top-texts {
-      display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 24px;
     }
-    div {
-      font-family: 'Preahvihear', sans-serif;
+
+    .image-wrapper {
+      width: 260px;
+      height: 260px;
     }
-    .highlight-name {
-      color: #7127BA;
+
+    .glow {
+      width: 260px;
+      height: 260px;
     }
-    .software-engineer {
-      font-size: 50px;
+
+    .avatar {
+      width: 210px;
+      height: 210px;
     }
-    .judes {
-      font-size: 50px;
-    }
+
+    .judes,
+    .software-engineer,
     .work-experience {
-      font-size: 50px;
+      font-size: 36px;
     }
-  `;
+  }
+`;
 
   render() {
-    return html`
-      <section>
-        <div>Hello! I Am <span class="highlight-name">Leonel Fonseca</span></div>
-        <div class="top-row">
-          <img src="${favicon}" alt="Favicon">
-          <div class="top-texts">
-            <div>A Designer who</div>
-            <div class="judes">Judges a book<br>by its <span class="highlight-name">cover</span>...</div>
-            <div>Because if the cover does not impress you what else can?</div>
+  return html`
+    <section>
+      <div class="intro-name">
+        Hello! I Am <span class="highlight-name">Leonel Fonseca</span>
+      </div>
+
+      <div class="top-row">
+        <div class="image-wrapper">
+          <img class="glow" src="${glowImg}" alt="Glow background" />
+          <img class="avatar" src="${meImg}" alt="Leonel Fonseca" />
+        </div>
+
+        <div class="top-texts">
+          <div class="subtitle">A Designer who</div>
+          <div class="judes">
+            Judges a book<br />
+            by its <span class="highlight-name">cover</span>...
+          </div>
+          <div class="description">
+            Because if the cover does not impress you what else can?
           </div>
         </div>
-        <div class="software-engineer">I'm a Software Engineer.| </div>
-        <div>Currently, I'm a Software Engineer at BBVA,</div>
-       <div>A self-taught UI/UX designer, functioning in the industry for 3+ years now.
-I make meaningful and delightful digital products that create an equilibrium
-between user needs and business goals.</div>
-<div class="work-experience">Work Experience</div>        
-</section>
-    `;
-  }
+      </div>
+
+      <div class="software-engineer">I'm a Software Engineer.|</div>
+      <div>Currently, I'm a Software Engineer at BBVA,</div>
+      <div>
+        A self-taught UI/UX designer, functioning in the industry for 3+ years now.
+        I make meaningful and delightful digital products that create an equilibrium
+        between user needs and business goals.
+      </div>
+      <div class="work-experience">Work Experience</div>
+    </section>
+  `;
+}
 }
 
 customElements.define('section-container', SectionContainer);
