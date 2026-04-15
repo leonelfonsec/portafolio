@@ -88,8 +88,13 @@ class SectionContainer extends LitElement {
 
   @media (max-width: 1024px) {
     section {
-      padding: 40px 24px;
+      padding: 80px 24px 40px 24px;
     }
+  @media (max-width: 600px) {
+    section {
+      padding-top: 130px;
+    }
+  }
 
     .top-row {
       flex-direction: column;
