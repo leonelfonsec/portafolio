@@ -9,7 +9,7 @@ class SectionContainer extends LitElement {
   section {
     display: flex;
     flex-direction: column;
-    padding: 60px 220px;
+    padding: 120px 220px 60px;
     font-family: 'Preahvihear', sans-serif;
     color: white;
   }
