@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import logo from "../../app/assets/logo.svg";
+import logo from "../../app/assets/logo.png";
 
 class AppHeader extends LitElement {
   static styles = css`
@@ -35,9 +35,11 @@ class AppHeader extends LitElement {
     }
 
     .logo img {
-      height: 42px;
+      height: 32px;
       width: auto;
       display: block;
+      transform: scale(2);
+      transform-origin: left center;
     }
 
     nav {

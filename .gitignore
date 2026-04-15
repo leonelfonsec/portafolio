@@ -1,1 +1,4 @@
 node_modules/
+src/.DS_Store
+src/app/.DS_Store
+src/app/assets/.DS_Store
